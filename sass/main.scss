@@ -1,0 +1,10 @@
+@import "helper/mixins";
+
+.title {
+    @include center;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background-color: #74AFAD;
+}

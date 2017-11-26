@@ -6,8 +6,11 @@ a {
 /*Background dsiplay */
 body {
     background-color: #74AFAD;
-    z-index: 3;
     font-family: 'Playfair Display', serif;
+}
+
+* {
+    z-index: 0;
 }
 
 .title {
