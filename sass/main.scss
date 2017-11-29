@@ -1,10 +1,113 @@
 @import "helper/mixins";
+@import "helper/placeholders";
 
-.title {
-    @include center;
-    font-family: 'Playfair Display', serif;
+
+body, html {
+    background-color: #0074D9;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    left: auto;
 }
 
-body {
-    background-color: #74AFAD;
+.title {
+    @extend %center;
+    width: 100%;
+    height: 100%;
+    .name{
+        font-family: 'Playfair Display', serif;
+        font-size: 10rem;
+        color: fade-out(#FF4136, 0.2);
+        //background-color: green;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        position: relative;
+        top: 20%;;
+        left: 0;
+        left: auto;
+    }
+
+    .sender{
+        height: 75px;
+        width: 75px;
+        position: relative;
+        top: 375px;
+        right: 2%;
+        .arrow {
+            width: 75px;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+#grid-container {
+    @extend %center;
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    width: 50%;
+    height: 200%;
+    grid-template-areas: "elevator education"
+                         "jhu experience"
+                         "makeSense legendOf";
+    -webkit-grid-column-gap: 3rem;
+    -moz-grid-column-gap: 3rem;
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+
+    .elevator {
+        //@extend %center;
+        font-size: 1rem;
+        color: black;
+        background-color: blue;
+        grid-area: elevator;
+    }
+
+    .jhu {
+        //@extend %center;
+        grid-area: jhu;
+        color: purple;
+        background-color: red;
+
+    }
+
+    #edu {
+        grid-area: education;
+        background-color: aqua;
+    }
+
+    #exp {
+        grid-area: experience;
+        background-color: yellow;
+    }
+
+    .makeSense {
+        background-color: red;
+        grid-area: makeSense;
+    }
+
+    .legendOf {
+        background-color: blue;
+        grid-area: legendOf;
+    }
+
+    .medHacks {
+        background-color: yellow;
+        //grid-area: medHacks;
+    }
+
 }
