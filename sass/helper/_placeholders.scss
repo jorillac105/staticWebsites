@@ -1,3 +1,6 @@
+$box-color: #C5C6C7;
+$border-color: #45A29E;
+
 %center {
   text-align: center;
   vertical-align: middle;
@@ -6,4 +9,11 @@
 %relative {
     position: relative;
     margin: auto;
+}
+
+%borderhover {
+    border: 0.2rem solid $box-color;
+    &:hover {
+        border-color: $border-color;
+    }
 }

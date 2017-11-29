@@ -10,6 +10,8 @@ $border-color: #45A29E;
 
 body, html {
     background-color: $background-color;
+    background-image: url('../dark-triangles.png');
+    background-blend-mode: difference;
     font-size: 16px;
     width: 100%;
     height: 100%;
@@ -21,6 +23,13 @@ body, html {
     top: 0;
     left: 0;
     left: auto;
+    z-index: 2;
+}
+
+#canvas {
+    width: 50%;
+    height: 100%;
+    z-index: 1;
 }
 
 .title {
@@ -47,7 +56,7 @@ body, html {
         height: 75px;
         width: 75px;
         position: relative;
-        top: 375px;
+        top: 23rem;
         right: 0;
         .arrow {
             width: 75px;
@@ -72,7 +81,7 @@ body, html {
     -webkit-grid-column-gap: 3rem;
     -moz-grid-column-gap: 3rem;
     grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
+    grid-row-gap: 1rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     color: $small-text-color;
@@ -85,16 +94,17 @@ body, html {
         grid-area: elevator;
         border-radius: 5%;
         padding: 5%;
-        // border: 0.2rem solid $border-color;
+        @extend %borderhover;
+        cursor: pointer;
     }
 
     .jhu {
-        //@extend %center;
         grid-area: jhu;
         background-color: $box-color;
         border-radius: 5%;
         padding: 5%;
-
+        @extend %borderhover;
+        cursor: pointer;
     }
 
     .overlay {
@@ -107,7 +117,7 @@ body, html {
         right: 0;
         bottom: 0;
         background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
         cursor: pointer; /* Add a pointer on hover */
     }
 
@@ -129,6 +139,8 @@ body, html {
         background-color: $box-color;
         border-radius: 5%;
         padding: 5%;
+        @extend %borderhover;
+        cursor: pointer;
     }
 
     #exp {
@@ -136,6 +148,8 @@ body, html {
         background-color: $box-color;
         border-radius: 5%;
         padding: 5%;
+        @extend %borderhover;
+        cursor: pointer;
     }
 
     .makeSense {
@@ -143,6 +157,8 @@ body, html {
         grid-area: makeSense;
         border-radius: 5%;
         padding: 5%;
+        @extend %borderhover;
+        cursor: pointer;
     }
 
     .legendOf {
@@ -150,6 +166,8 @@ body, html {
         grid-area: legendOf;
         border-radius: 5%;
         padding: 5%;
+        @extend %borderhover;
+        cursor: pointer;
     }
 
     .medHacks {

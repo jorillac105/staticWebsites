@@ -8,7 +8,6 @@ $(document).ready(() => {
     });
 
     $('.overlay').on('click', () => {
-
         $curWindow.slideToggle('fast');
         $('.overlay').fadeToggle('slow');
     })
@@ -18,5 +17,4 @@ $(document).ready(() => {
         $curWindow = $('#whereExp');
         $curWindow.slideToggle('fast');
     });
-
 });

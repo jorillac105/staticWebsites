@@ -2,8 +2,15 @@
   text-align: center;
   vertical-align: middle; }
 
+#grid-container .elevator, #grid-container .jhu, #grid-container #edu, #grid-container #exp, #grid-container .makeSense, #grid-container .legendOf {
+  border: 0.2rem solid #C5C6C7; }
+  #grid-container .elevator:hover, #grid-container .jhu:hover, #grid-container #edu:hover, #grid-container #exp:hover, #grid-container .makeSense:hover, #grid-container .legendOf:hover {
+    border-color: #45A29E; }
+
 body, html {
   background-color: #1f2833;
+  background-image: url("../dark-triangles.png");
+  background-blend-mode: difference;
   font-size: 16px;
   width: 100%;
   height: 100%;
@@ -14,7 +21,13 @@ body, html {
   position: relative;
   top: 0;
   left: 0;
-  left: auto; }
+  left: auto;
+  z-index: 2; }
+
+#canvas {
+  width: 50%;
+  height: 100%;
+  z-index: 1; }
 
 .title {
   width: 100%;
@@ -36,7 +49,7 @@ body, html {
     height: 75px;
     width: 75px;
     position: relative;
-    top: 375px;
+    top: 23rem;
     right: 0; }
     .title .sender .arrow {
       width: 75px;
@@ -54,7 +67,7 @@ body, html {
   -webkit-grid-column-gap: 3rem;
   -moz-grid-column-gap: 3rem;
   grid-column-gap: 3rem;
-  grid-row-gap: 3rem;
+  grid-row-gap: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   color: #0B0C10; }
@@ -63,12 +76,14 @@ body, html {
     background-color: #C5C6C7;
     grid-area: elevator;
     border-radius: 5%;
-    padding: 5%; }
+    padding: 5%;
+    cursor: pointer; }
   #grid-container .jhu {
     grid-area: jhu;
     background-color: #C5C6C7;
     border-radius: 5%;
-    padding: 5%; }
+    padding: 5%;
+    cursor: pointer; }
   #grid-container .overlay {
     position: fixed;
     /* Sit on top of the page content */
@@ -84,7 +99,7 @@ body, html {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     /* Black background with opacity */
-    z-index: 2;
+    z-index: 3;
     /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer;
     /* Add a pointer on hover */ }
@@ -102,22 +117,26 @@ body, html {
     grid-area: education;
     background-color: #C5C6C7;
     border-radius: 5%;
-    padding: 5%; }
+    padding: 5%;
+    cursor: pointer; }
   #grid-container #exp {
     grid-area: experience;
     background-color: #C5C6C7;
     border-radius: 5%;
-    padding: 5%; }
+    padding: 5%;
+    cursor: pointer; }
   #grid-container .makeSense {
     background-color: #C5C6C7;
     grid-area: makeSense;
     border-radius: 5%;
-    padding: 5%; }
+    padding: 5%;
+    cursor: pointer; }
   #grid-container .legendOf {
     background-color: #C5C6C7;
     grid-area: legendOf;
     border-radius: 5%;
-    padding: 5%; }
+    padding: 5%;
+    cursor: pointer; }
   #grid-container .medHacks {
     background-color: yellow; }
 
