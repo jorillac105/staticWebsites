@@ -10,7 +10,7 @@ $border-color: #45A29E;
 
 body, html {
     background-color: $background-color;
-    background-image: url('../dark-triangles.png');
+    background-image: url('../images/dark-triangles.png');
     background-blend-mode: difference;
     font-size: 16px;
     width: 100%;
@@ -26,6 +26,45 @@ body, html {
     z-index: 2;
 }
 
+.anchor{
+  display: block;
+  height: 5rem; /*same height as header*/
+  margin-top: -5rem; /*same height as header*/
+  visibility: hidden;
+}
+
+#aboutAnchor {
+    height: 2rem;
+}
+
+#navBar {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    background-color: $background-color;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    font-weight: 900;
+    opacity: 0.95;
+    z-index: 1;
+    min-width: 50%;
+    ul {
+        list-style-type: none;
+        text-decoration: none;
+        float:right;
+        margin-right: 2rem;
+        color: $big-text-color;
+        .button {
+            color: $big-text-color;
+            text-decoration: none;
+            display: inline-block;
+            padding-right: 0.5rem;
+        }
+    }
+}
+
 #canvas {
     width: 50%;
     height: 100%;
@@ -36,6 +75,7 @@ body, html {
     @extend %center;
     width: 100%;
     height: 100%;
+    text-decoration: none;
     .name{
         font-family: 'Source Sans Pro', sans-serif;
         letter-spacing: 0;
@@ -56,13 +96,42 @@ body, html {
         height: 75px;
         width: 75px;
         position: relative;
+        border: none;
         top: 23rem;
         right: 0;
+        text-decoration: none;
         .arrow {
             width: 75px;
             max-width: 100%;
             height: auto;
         }
+        transition: height .600s ease;
+    }
+}
+
+#about {
+    @extend %center;
+    height: 100%;
+    width: 100%;
+    #aboutMe {
+        color: $big-text-color;
+        font-size: 5rem;
+        font-family: 'Source Sans Pro', sans-serif;
+        margin-bottom: 0;
+    }
+    .elevator {
+        margin-top: 0;
+        padding-top: 0;
+        position: relative;
+        color: $border-color;
+        font-size: 4rem;
+        font-family: 'Source Sans Pro', sans-serif;
+        line-height: 200%;
+        left: 25%;
+        width: 40%;
+        font-size: 1rem;
+        border-radius: 10%;
+        padding: 5%;
     }
 }
 
@@ -75,7 +144,7 @@ body, html {
     display: grid;
     width: 50%;
     height: 200%;
-    grid-template-areas: "elevator education"
+    grid-template-areas: "education education"
                          "jhu experience"
                          "makeSense legendOf";
     -webkit-grid-column-gap: 3rem;
@@ -85,18 +154,6 @@ body, html {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     color: $small-text-color;
-
-
-    .elevator {
-        //@extend %center;
-        font-size: 1rem;
-        background-color: $box-color;
-        grid-area: elevator;
-        border-radius: 5%;
-        padding: 5%;
-        @extend %borderhover;
-        cursor: pointer;
-    }
 
     .jhu {
         grid-area: jhu;
