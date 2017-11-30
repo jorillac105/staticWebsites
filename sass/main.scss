@@ -38,18 +38,17 @@ body, html {
 }
 
 #navBar {
-    font-size: 1.5rem;
-    line-height: 1.25;
-    background-color: $background-color;
-    position: fixed;
+    @extend %center;
     left: 0;
     top: 0;
     width: 100%;
-    height: 5rem;
+    height: 3rem;
     font-weight: 900;
     opacity: 0.95;
     z-index: 1;
     min-width: 50%;
+    margin-bottom: 0;
+    padding-bottom: 0;
     ul {
         list-style-type: none;
         text-decoration: none;
@@ -57,55 +56,68 @@ body, html {
         margin-right: 2rem;
         color: $big-text-color;
         .button {
-            color: $big-text-color;
             text-decoration: none;
             display: inline-block;
-            padding-right: 0.5rem;
+            margin-right: 0.5rem;
+            padding: 0 0.5rem;
+            font-size: 1.5rem;
+            line-height: 1.25;
+            cursor: pointer;
+            font-family:'Source Sans Pro', sans-serif;
         }
     }
 }
 
-#canvas {
-    width: 50%;
-    height: 100%;
-    z-index: 1;
+.selectedButton {
+    background-color: $border-color;
+    color: white;
 }
+
+.fullBar {
+    background-color: $background-color;
+    position: fixed;
+}
+
 
 .title {
     @extend %center;
     width: 100%;
     height: 100%;
     text-decoration: none;
+    margin-top: 0;
+    padding-top:0;
     .name{
+        width: 100%;
+        @extend %center;
         font-family: 'Source Sans Pro', sans-serif;
         letter-spacing: 0;
-        font-size: 10rem;
+        font-size: 8rem;
         color: $big-text-color;
-        //background-color: green;
         width: 100%;
         margin-top: 0;
         margin-bottom: 0;
         padding-top: 0;
         position: relative;
-        top: 20%;;
-        left: 0;
-        left: auto;
+        top: 10%;
+        left:15%;
     }
 
     .sender{
+        cursor: pointer;
         height: 75px;
         width: 75px;
         position: relative;
         border: none;
-        top: 23rem;
+        top: 20rem;
         right: 0;
         text-decoration: none;
-        .arrow {
-            width: 75px;
-            max-width: 100%;
-            height: auto;
-        }
         transition: height .600s ease;
+    }
+
+    .arrow {
+        width: 75px;
+        max-width: 100%;
+        height: auto;
     }
 }
 
@@ -132,6 +144,34 @@ body, html {
         font-size: 1rem;
         border-radius: 10%;
         padding: 5%;
+    }
+    .resume {
+        @extend %center;
+        width: 15%;
+        height: 12%;
+        border-radius: 5%;
+        border: 0.1rem solid $box-color;
+        padding-right: 1%;
+        position: absolute;
+        left: 42%;
+        transform: scale(.925);
+        transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
+        img {
+            width: 125%;
+        }
+        h2 {
+            position: relative;
+            top: -100%;
+            right: -19%;
+            color: $border-color;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        &:hover {
+            border-color: $big-text-color;
+            background-color: $big-text-color;
+            transform: scale(1);
+        }
     }
 }
 

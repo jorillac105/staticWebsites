@@ -1,5 +1,11 @@
-$(document).ready(() => {
+var titleHeight = $('.title').height() + $('#homeAnchor').height();
+var aboutHeight = $('#about').height() + $('#aboutAnchor').height();
+var gridHeight = $('#grid-container').height() + $('#gridAnchor').height();
+var aboutOffset = titleHeight - aboutHeight + 300;
+var stuffOffset = titleHeight + aboutHeight - gridHeight /2;
 
+
+$(document).ready(() => {
     //toggling windows from grid
     let $curWindow;
 
@@ -26,6 +32,7 @@ $(document).ready(() => {
     });
 
     $('#homeButton').on('click', () => {
+        $('#navBar').removeClass('fullBar');
         $('#homeAnchor').goTo();
     });
 
@@ -38,11 +45,42 @@ $(document).ready(() => {
     });
 });
 
+$(window).scroll(checkButtons);
+
+function checkButtons() {
+    var scroll_top = $(window).scrollTop();
+    if (scroll_top >= stuffOffset) {
+        $('#gridButton').addClass('selectedButton');
+        $('#aboutButton').removeClass('selectedButton');
+    } else if (scroll_top >= aboutOffset) { // the detection!
+        $('#navBar').addClass('fullBar');
+        $('#navBar').fadeIn('fast');
+        $('#aboutButton').addClass('selectedButton');
+        $('#gridButton').removeClass('selectedButton');
+    } else if (scroll_top >= (aboutOffset - 100)) {
+        $('#navBar').hide();
+        $('#navBar').removeClass('fullBar');
+    }
+    else {
+        $('#navBar').removeClass('fullBar');
+        $('#navBar').show();
+        $('#aboutButton').removeClass('selectedButton');
+        $('#gridButton').removeClass('selectedButton');
+    }
+}
+
+
 (function($) {
     $.fn.goTo = function() {
+        var placeToGo;
+        if ($('#navBar').hasClass('fullBar')) {
+            placeToGo = $(this).offset().top;
+        } else {
+            placeToGo = $(this).offset().top - 50;
+        }
         $('html, body').animate({
-            scrollTop: $(this).offset().top + 'px'
-        }, 'fast');
+            scrollTop: placeToGo + 'px'
+        });
         return this;
     }
 })(jQuery);

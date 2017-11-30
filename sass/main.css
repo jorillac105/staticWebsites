@@ -1,4 +1,4 @@
-.title, #about, #grid-container, #grid-container .infoWindow {
+#navBar, .title, .title .name, #about, #about .resume, #grid-container, #grid-container .infoWindow {
   text-align: center;
   vertical-align: middle; }
 
@@ -36,18 +36,16 @@ body, html {
   height: 2rem; }
 
 #navBar {
-  font-size: 1.5rem;
-  line-height: 1.25;
-  background-color: #1f2833;
-  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  height: 5rem;
+  height: 3rem;
   font-weight: 900;
   opacity: 0.95;
   z-index: 1;
-  min-width: 50%; }
+  min-width: 50%;
+  margin-bottom: 0;
+  padding-bottom: 0; }
   #navBar ul {
     list-style-type: none;
     text-decoration: none;
@@ -55,46 +53,56 @@ body, html {
     margin-right: 2rem;
     color: #66FCF1; }
     #navBar ul .button {
-      color: #66FCF1;
       text-decoration: none;
       display: inline-block;
-      padding-right: 0.5rem; }
+      margin-right: 0.5rem;
+      padding: 0 0.5rem;
+      font-size: 1.5rem;
+      line-height: 1.25;
+      cursor: pointer;
+      font-family: 'Source Sans Pro', sans-serif; }
 
-#canvas {
-  width: 50%;
-  height: 100%;
-  z-index: 1; }
+.selectedButton {
+  background-color: #45A29E;
+  color: white; }
+
+.fullBar {
+  background-color: #1f2833;
+  position: fixed; }
 
 .title {
   width: 100%;
   height: 100%;
-  text-decoration: none; }
+  text-decoration: none;
+  margin-top: 0;
+  padding-top: 0; }
   .title .name {
+    width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0;
-    font-size: 10rem;
+    font-size: 8rem;
     color: #66FCF1;
     width: 100%;
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
     position: relative;
-    top: 20%;
-    left: 0;
-    left: auto; }
+    top: 10%;
+    left: 15%; }
   .title .sender {
+    cursor: pointer;
     height: 75px;
     width: 75px;
     position: relative;
     border: none;
-    top: 23rem;
+    top: 20rem;
     right: 0;
     text-decoration: none;
     transition: height .600s ease; }
-    .title .sender .arrow {
-      width: 75px;
-      max-width: 100%;
-      height: auto; }
+  .title .arrow {
+    width: 75px;
+    max-width: 100%;
+    height: auto; }
 
 #about {
   height: 100%;
@@ -117,6 +125,28 @@ body, html {
     font-size: 1rem;
     border-radius: 10%;
     padding: 5%; }
+  #about .resume {
+    width: 15%;
+    height: 12%;
+    border-radius: 5%;
+    border: 0.1rem solid #C5C6C7;
+    padding-right: 1%;
+    position: absolute;
+    left: 42%;
+    transform: scale(0.925);
+    transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
+    #about .resume img {
+      width: 125%; }
+    #about .resume h2 {
+      position: relative;
+      top: -100%;
+      right: -19%;
+      color: #45A29E;
+      font-family: 'Source Sans Pro', sans-serif; }
+    #about .resume:hover {
+      border-color: #66FCF1;
+      background-color: #66FCF1;
+      transform: scale(1); }
 
 #grid-container {
   float: none;
