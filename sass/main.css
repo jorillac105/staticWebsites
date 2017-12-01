@@ -1,17 +1,17 @@
-#navBar, .title, .title .name, #about, #about .resume, #grid-container, #grid-container .infoWindow {
+#navBar, .title, .title .name, #about, #about .resume, #stuff, #grid-container, #grid-container .infoWindow, #contactMe .contactTitle, #gform {
   text-align: center;
   vertical-align: middle; }
 
-#grid-container .jhu, #grid-container #edu, #grid-container #exp, #grid-container .makeSense, #grid-container .legendOf {
-  border: 0.2rem solid #C5C6C7; }
-  #grid-container .jhu:hover, #grid-container #edu:hover, #grid-container #exp:hover, #grid-container .makeSense:hover, #grid-container .legendOf:hover {
+#grid-container #medHacks, #grid-container #legend {
+  border: 0.5rem solid #C5C6C7; }
+  #grid-container #medHacks:hover, #grid-container #legend:hover {
     border-color: #45A29E; }
 
 body, html {
   background-color: #1f2833;
   background-image: url("../images/dark-triangles.png");
   background-blend-mode: difference;
-  font-size: 16px;
+  font-size: 1vmax;
   width: 100%;
   height: 100%;
   margin-top: 0;
@@ -23,6 +23,9 @@ body, html {
   left: 0;
   left: auto;
   z-index: 2; }
+
+a, a:hover, a:active, a:visited, a:focus {
+  text-decoration: none; }
 
 .anchor {
   display: block;
@@ -45,7 +48,8 @@ body, html {
   z-index: 1;
   min-width: 50%;
   margin-bottom: 0;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  position: fixed; }
   #navBar ul {
     list-style-type: none;
     text-decoration: none;
@@ -56,11 +60,15 @@ body, html {
       text-decoration: none;
       display: inline-block;
       margin-right: 0.5rem;
-      padding: 0 0.5rem;
+      padding: .25rem 0.5rem;
       font-size: 1.5rem;
-      line-height: 1.25;
+      line-height: 0.75;
       cursor: pointer;
       font-family: 'Source Sans Pro', sans-serif; }
+    #navBar ul #julian {
+      font-size: 2rem;
+      margin-right: 45rem;
+      visibility: hidden; }
 
 .selectedButton {
   background-color: #45A29E;
@@ -68,7 +76,7 @@ body, html {
 
 .fullBar {
   background-color: #1f2833;
-  position: fixed; }
+  visibility: hidden; }
 
 .title {
   width: 100%;
@@ -77,36 +85,37 @@ body, html {
   margin-top: 0;
   padding-top: 0; }
   .title .name {
-    width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0;
-    font-size: 8rem;
+    font-size: 9rem;
     color: #66FCF1;
-    width: 100%;
+    width: 80%;
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
+    padding-right: 0;
     position: relative;
     top: 10%;
-    left: 15%; }
+    left: 12%; }
   .title .sender {
     cursor: pointer;
-    height: 75px;
-    width: 75px;
-    position: relative;
+    height: 10%;
+    width: 10%;
+    position: absolute;
     border: none;
-    top: 20rem;
-    right: 0;
+    top: 85%;
+    right: 48%;
     text-decoration: none;
     transition: height .600s ease; }
   .title .arrow {
-    width: 75px;
+    width: 5%;
     max-width: 100%;
     height: auto; }
 
 #about {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 5%; }
   #about #aboutMe {
     color: #66FCF1;
     font-size: 5rem;
@@ -117,58 +126,63 @@ body, html {
     padding-top: 0;
     position: relative;
     color: #45A29E;
-    font-size: 4rem;
+    font-size: 1.5rem;
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 200%;
     left: 25%;
     width: 40%;
-    font-size: 1rem;
     border-radius: 10%;
     padding: 5%; }
   #about .resume {
-    width: 15%;
-    height: 12%;
+    width: 14.06rem;
+    height: 4.6875rem;
     border-radius: 5%;
     border: 0.1rem solid #C5C6C7;
-    padding-right: 1%;
+    padding-right: 0.78125rem;
+    padding-bottom: 0.78125rem;
     position: absolute;
     left: 42%;
     transform: scale(0.925);
     transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
     #about .resume img {
-      width: 125%; }
+      width: 17.96875rem; }
     #about .resume h2 {
       position: relative;
-      top: -100%;
-      right: -19%;
+      font-size: 2.5rem;
+      top: -7.421875rem;
+      right: -2.73435rem;
       color: #45A29E;
-      font-family: 'Source Sans Pro', sans-serif; }
+      font-family: 'Source Sans Pro', sans-serif;
+      text-decoration: none; }
     #about .resume:hover {
       border-color: #66FCF1;
       background-color: #66FCF1;
       transform: scale(1); }
 
+#stuff {
+  color: #66FCF1;
+  font-size: 5rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 5% 0;
+  padding: 0; }
+
 #grid-container {
   float: none;
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 10%;
   display: grid;
-  width: 50%;
-  height: 200%;
-  grid-template-areas: "education education" "jhu experience" "makeSense legendOf";
+  width: 80%;
+  height: 50%;
+  grid-template-areas: "education experience";
   -webkit-grid-column-gap: 3rem;
   -moz-grid-column-gap: 3rem;
-  grid-column-gap: 3rem;
+  grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  color: #0B0C10; }
-  #grid-container .jhu {
-    grid-area: jhu;
-    background-color: #C5C6C7;
-    border-radius: 5%;
-    padding: 5%;
-    cursor: pointer; }
+  grid-template-rows: 1fr;
+  color: #0B0C10;
+  align-items: center;
+  justify-items: center;
+  padding-bottom: 5%; }
   #grid-container .overlay {
     position: fixed;
     /* Sit on top of the page content */
@@ -182,7 +196,7 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     /* Black background with opacity */
     z-index: 3;
     /* Specify a stack order in case you're using a different order for other elements */
@@ -192,37 +206,100 @@ body, html {
     z-index: 4;
     display: none;
     position: fixed;
-    height: 45%;
     width: 40%;
+    box-sizing: border-box;
     background-color: white;
     top: 30%;
     left: 30%;
     border-radius: 10%; }
-  #grid-container #edu {
+    #grid-container .infoWindow .detailTitle {
+      color: black;
+      font-size: 2rem; }
+    #grid-container .infoWindow .details {
+      position: relative;
+      left: 10%;
+      color: #45A29E;
+      font-size: 1.5rem;
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 200%;
+      width: 80%; }
+      #grid-container .infoWindow .details a {
+        text-decoration: none !important; }
+  #grid-container #medHacks {
     grid-area: education;
-    background-color: #C5C6C7;
+    background-color: white;
     border-radius: 5%;
     padding: 5%;
-    cursor: pointer; }
-  #grid-container #exp {
+    cursor: pointer;
+    width: 60%; }
+  #grid-container #legend {
     grid-area: experience;
-    background-color: #C5C6C7;
-    border-radius: 5%;
-    padding: 5%;
-    cursor: pointer; }
-  #grid-container .makeSense {
-    background-color: #C5C6C7;
-    grid-area: makeSense;
-    border-radius: 5%;
-    padding: 5%;
-    cursor: pointer; }
-  #grid-container .legendOf {
-    background-color: #C5C6C7;
-    grid-area: legendOf;
-    border-radius: 5%;
-    padding: 5%;
-    cursor: pointer; }
-  #grid-container .medHacks {
-    background-color: yellow; }
+    padding: 0;
+    margin: 0;
+    border-radius: 20%;
+    cursor: pointer;
+    width: 90%; }
+
+#contactMe .contactTitle {
+  color: #66FCF1;
+  font-size: 5rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 5%;
+  padding: 0; }
+
+#gform {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  border: 3px none #C5C6C7;
+  padding-bottom: 10%; }
+  #gform fieldset {
+    border: none; }
+    #gform fieldset label {
+      color: #66FCF1;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1.5rem; }
+    #gform fieldset input {
+      height: 4rem;
+      background-color: #1f2833; }
+    #gform fieldset textarea {
+      resize: none;
+      height: 12rem; }
+    #gform fieldset input, #gform fieldset textarea {
+      font-size: 1.5rem;
+      width: 80%;
+      border: 3px none #C5C6C7;
+      background-color: #1f2833;
+      color: #45A29E;
+      border-radius: 3%;
+      padding: 1rem; }
+  #gform button {
+    cursor: pointer;
+    color: #45A29E;
+    border: none;
+    font-size: 2.5rem;
+    padding: 1rem 3rem;
+    background-color: #1f2833;
+    transform: scale(0.925);
+    transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
+    #gform button:hover {
+      border-color: #66FCF1;
+      background-color: #66FCF1;
+      transform: scale(1); }
+
+#thankyou_message {
+  display: none; }
+
+.email-invalid, .name-invalid {
+  color: red;
+  position: relative;
+  top: 36px;
+  font-size: 1rem;
+  left: -299px;
+  background-color: white;
+  padding: 3px;
+  padding-top: 0px;
+  opacity: 0;
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

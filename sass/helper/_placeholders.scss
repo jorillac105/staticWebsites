@@ -12,7 +12,7 @@ $border-color: #45A29E;
 }
 
 %borderhover {
-    border: 0.2rem solid $box-color;
+    border: 0.5rem solid $box-color;
     &:hover {
         border-color: $border-color;
     }

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
     <title>Julian Orillac</title>
     <link href="./sass/main.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-
 </head>
 <body>
     <nav id="navBar">
         <ul>
+            <li class="button" id="julian">JULIAN ORILLAC</li>
             <li class="button" id="homeButton">HOME</li>
             <li class="button" id="aboutButton">ABOUT</li>
-            <li class="button" id="gridButton">STUFF</li>
+            <li class="button" id="gridButton">PROJECTS</li>
+            <li class="button" id="contactButton">CONTACT ME</li>
         </ul>
     </nav>
     <div class="anchor" id="homeAnchor"></div>
@@ -39,28 +41,62 @@
         </a>
 
     </div>
+
+
     <div class="anchor" id="gridAnchor"></div>
+    <h2 id="stuff">PROJECTS</h2>
     <div id="grid-container">
-
-        <h2 class="section" id="edu">Education</h2>
+        <img src= "./images/MH-Stickers-03.png" class="section" id="medHacks"/>
+        <img class="section" id="legend" src="./images/you_won.png"/>
         <div class="overlay"></div>
-        <div class="infoWindow" id="whereEducation">sup</div>
-
-        <h2 class="jhu">adsf</h2>
-
-        <h2 class="section" id="exp">Experience</h2>
-        <h2 class="infoWindow" id="whereExp"> yo </h2>
-
-        <h2 class="makeSense"><p>makesense</p></h2>
-        <h2 class="legendOf"><p>legendOf</p></h2>
+        <div class="infoWindow" id="medHacksInfo">
+            <h2 class="detailTitle">MedHacks</h2>
+            <hr>
+            <p class="details"> MedHacks is the premier medical Hackathon hosted annually at Johns Hopkins University. I am one of the developers responsible for creating their <a href="http://medhacks.org" target="_blank">website</a>. </p>
+        </div>
+        <div class="infoWindow" id="legendInfo">
+            <h2 class="detailTitle">The Legend of Chef Chef</h2>
+            <hr>
+            <p class="details"> I have been spearheading the development of a top-down action-adventure game written in Python. Legend is a whimsical story about a chef (named chef) who discovers a rat infestation and must uncover the truth about his restaurant. <br> You can see our repository <a href="https://bitbucket.org/601255/looking" target="_blank">here</a>. </p>
+        </div>
     <!-- <div class="medHacks"><p>medHacks</p></div> -->
     </div>
+
+    <div class="anchor" id="contactAnchor"></div>
+    <div id="contactMe">
+        <h2 class="contactTitle">CONTACT ME</h2>
+        <form id="gform" method="POST" class="pure-form pure-form-stacked" action="https://script.google.com/macros/s/AKfycbz7oM64QAy7bWuSYfa4mqKeY60orjVahk3ifVFyPTeNc4hnj_0/exec">
+            <fieldset class="pure-group">
+                <!-- <label for="name" class="animated">Name: </label> -->
+                <input class="animated" id="name" name="name" type="text" placeholder="Name" required/>
+                <span class="animated name-invalid">Must enter your name</span>
+            </fieldset>
+
+            <fieldset class="pure-group">
+                <!-- <label for="email" class="animated">Email: </label> -->
+                <input class="animated" id="email" name="email" type="text" placeholder="Email" required/>
+                <span id="email-invalid" class="animated email-invalid">Must be a valid email address</span>
+            </fieldset>
+
+            <fieldset class="pure-group">
+                <!-- <label for="message" class="animated">Message: </label> -->
+                <textarea class="animated" id="message" name="message" type="text" placeholder="Your message" required></textarea>
+            </fieldset>
+            <button id="contactButton" class="animated button-success pure-button button-xlarge">
+                    <span class="send">SEND</span>
+                    <div class="loading-bubble"></div>
+            </button>
+        </form>
+        <h2 id="thankyou_message" class="contactTitle reaction">THANK YOU FOR CONTACTING ME!</h2>
+    </div>
+
 
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-  <script src='main.js' ></script>
+  <script type="text/javascript" src='js/main.js' ></script>
+  <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
 </body>
 
 </html>

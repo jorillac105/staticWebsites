@@ -12,7 +12,7 @@ body, html {
     background-color: $background-color;
     background-image: url('../images/dark-triangles.png');
     background-blend-mode: difference;
-    font-size: 16px;
+    font-size: 1vmax;
     width: 100%;
     height: 100%;
     margin-top: 0;
@@ -24,6 +24,10 @@ body, html {
     left: 0;
     left: auto;
     z-index: 2;
+}
+
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration: none;
 }
 
 .anchor{
@@ -49,6 +53,7 @@ body, html {
     min-width: 50%;
     margin-bottom: 0;
     padding-bottom: 0;
+    position: fixed;
     ul {
         list-style-type: none;
         text-decoration: none;
@@ -59,11 +64,17 @@ body, html {
             text-decoration: none;
             display: inline-block;
             margin-right: 0.5rem;
-            padding: 0 0.5rem;
+            padding: .25rem 0.5rem;
             font-size: 1.5rem;
-            line-height: 1.25;
+            line-height: 0.75;
             cursor: pointer;
             font-family:'Source Sans Pro', sans-serif;
+        }
+
+        #julian {
+            font-size: 2rem;
+            margin-right: 45rem;
+            visibility: hidden;
         }
     }
 }
@@ -75,7 +86,7 @@ body, html {
 
 .fullBar {
     background-color: $background-color;
-    position: fixed;
+    visibility: hidden;
 }
 
 
@@ -87,35 +98,35 @@ body, html {
     margin-top: 0;
     padding-top:0;
     .name{
-        width: 100%;
         @extend %center;
         font-family: 'Source Sans Pro', sans-serif;
         letter-spacing: 0;
-        font-size: 8rem;
+        font-size: 9rem;
         color: $big-text-color;
-        width: 100%;
+        width: 80%;
         margin-top: 0;
         margin-bottom: 0;
         padding-top: 0;
+        padding-right: 0;
         position: relative;
         top: 10%;
-        left:15%;
+        left:12%;
     }
 
     .sender{
         cursor: pointer;
-        height: 75px;
-        width: 75px;
-        position: relative;
+        height: 10%;
+        width: 10%;
+        position: absolute;
         border: none;
-        top: 20rem;
-        right: 0;
+        top: 85%;
+        right: 48%;
         text-decoration: none;
         transition: height .600s ease;
     }
 
     .arrow {
-        width: 75px;
+        width: 5%;
         max-width: 100%;
         height: auto;
     }
@@ -125,6 +136,7 @@ body, html {
     @extend %center;
     height: 100%;
     width: 100%;
+    margin-bottom: 5%;
     #aboutMe {
         color: $big-text-color;
         font-size: 5rem;
@@ -136,35 +148,37 @@ body, html {
         padding-top: 0;
         position: relative;
         color: $border-color;
-        font-size: 4rem;
+        font-size: 1.5rem;
         font-family: 'Source Sans Pro', sans-serif;
         line-height: 200%;
         left: 25%;
         width: 40%;
-        font-size: 1rem;
         border-radius: 10%;
         padding: 5%;
     }
     .resume {
         @extend %center;
-        width: 15%;
-        height: 12%;
+        width: 14.06rem;
+        height: 4.6875rem;
         border-radius: 5%;
         border: 0.1rem solid $box-color;
-        padding-right: 1%;
+        padding-right: 0.78125rem;
+        padding-bottom: 0.78125rem;
         position: absolute;
         left: 42%;
         transform: scale(.925);
         transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
         img {
-            width: 125%;
+            width: 17.96875rem;
         }
         h2 {
             position: relative;
-            top: -100%;
-            right: -19%;
+            font-size: 2.5rem;
+            top: -7.421875rem;
+            right: -2.73435rem;
             color: $border-color;
             font-family: 'Source Sans Pro', sans-serif;
+            text-decoration: none;
         }
 
         &:hover {
@@ -175,34 +189,34 @@ body, html {
     }
 }
 
+#stuff {
+    color: $big-text-color;
+    font-size: 5rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 5% 0;
+    padding: 0;
+    @extend %center;
+}
+
 #grid-container {
     //background-color: $grid-color;
     @extend %center;
     float: none;
-    margin-right: auto;
-    margin-left: auto;
+    margin-left: 10%;
     display: grid;
-    width: 50%;
-    height: 200%;
-    grid-template-areas: "education education"
-                         "jhu experience"
-                         "makeSense legendOf";
+    width: 80%;
+    height: 50%;
+    grid-template-areas: "education experience";
     -webkit-grid-column-gap: 3rem;
     -moz-grid-column-gap: 3rem;
-    grid-column-gap: 3rem;
+    grid-column-gap: 1rem;
     grid-row-gap: 1rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     color: $small-text-color;
-
-    .jhu {
-        grid-area: jhu;
-        background-color: $box-color;
-        border-radius: 5%;
-        padding: 5%;
-        @extend %borderhover;
-        cursor: pointer;
-    }
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 5%;
 
     .overlay {
         position: fixed; /* Sit on top of the page content */
@@ -213,7 +227,7 @@ body, html {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+        background-color: rgba(0,0,0,0.7); /* Black background with opacity */
         z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
         cursor: pointer; /* Add a pointer on hover */
     }
@@ -223,53 +237,128 @@ body, html {
         @extend %center;
         display: none;
         position: fixed;
-        height: 45%;
         width: 40%;
+        box-sizing: border-box;
         background-color: white;
         top: 30%;
         left: 30%;
         border-radius: 10%;
+
+        .detailTitle {
+            color: black;
+            font-size: 2rem;
+        }
+
+        .details {
+            position: relative;
+            left: 10%;
+            color: $border-color;
+            font-size: 1.5rem;
+            font-family: 'Source Sans Pro', sans-serif;
+            line-height: 200%;
+            width: 80%;
+            a {
+                text-decoration: none!important;
+            }
+        }
     }
 
-    #edu {
+    #medHacks {
         grid-area: education;
-        background-color: $box-color;
+        background-color: white;
         border-radius: 5%;
         padding: 5%;
         @extend %borderhover;
         cursor: pointer;
+        width: 60%;
     }
 
-    #exp {
+    #legend {
         grid-area: experience;
-        background-color: $box-color;
-        border-radius: 5%;
-        padding: 5%;
+        padding: 0;
+        margin: 0;
+        border-radius: 20%;
         @extend %borderhover;
         cursor: pointer;
+        width: 90%;
+    }
+}
+
+#contactMe {
+    .contactTitle {
+        color: $big-text-color;
+        font-size: 5rem;
+        font-family: 'Source Sans Pro', sans-serif;
+        margin-bottom: 5%;
+        padding: 0;
+        @extend %center;
+    }
+}
+
+#gform {
+    position: absolute;
+    left: 10%;
+    @extend %center;
+    width: 80%;
+    border: 3px none $box-color;
+    padding-bottom: 10%;
+    fieldset {
+        border: none;
+        label {
+            color: $big-text-color;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1.5rem;
+        }
+        input {
+            height: 4rem;
+            background-color: $background-color;
+        }
+        textarea{
+            resize: none;
+            height: 12rem;
+        }
+
+        input, textarea {
+            font-size: 1.5rem;
+            width: 80%;
+            border: 3px none $box-color;
+            background-color: $background-color;
+            color: $border-color;
+            border-radius: 3%;
+            padding: 1rem;
+        }
     }
 
-    .makeSense {
-        background-color: $box-color;
-        grid-area: makeSense;
-        border-radius: 5%;
-        padding: 5%;
-        @extend %borderhover;
+    button {
         cursor: pointer;
+        color: $border-color;
+        border: none;
+        font-size:2.5rem;
+        padding: 1rem 3rem;
+        background-color: $background-color;
+        transform: scale(.925);
+        transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
+        &:hover {
+            border-color: $big-text-color;
+            background-color: $big-text-color;
+            transform: scale(1);
+        }
     }
+}
 
-    .legendOf {
-        background-color: $box-color;
-        grid-area: legendOf;
-        border-radius: 5%;
-        padding: 5%;
-        @extend %borderhover;
-        cursor: pointer;
-    }
+#thankyou_message {
+    display: none;
+}
 
-    .medHacks {
-        background-color: yellow;
-        //grid-area: medHacks;
-    }
-
+.email-invalid, .name-invalid {
+    color: red;
+    position: relative;
+    top: 36px;
+    font-size: 1rem;
+    left: -299px;
+    background-color: white;
+    padding: 3px;
+    padding-top: 0px;
+    opacity: 0;
+    display: none;
 }
