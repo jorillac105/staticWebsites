@@ -52,43 +52,51 @@ $(document).ready(() => {
         $('#contactAnchor').goTo();
     });
     $(window).scroll(checkButtons);
+
+    $(".navbar").hide(); //Hide the navigation bar first
+
+    $(window).scroll(function () {  //Listen for the window's scroll event
+        if (isScrolledAfterElement("#aboutAnchor")) { //if it has scrolled beyond the #content elment
+            $('.navbar').fadeIn();  //Show the navigation bar
+        } else {
+            $('.navbar').fadeOut(); //Else hide it
+        }
+    });
 });
+
+function isScrolledAfterElement(elem) {
+    var $elem = $(elem);
+    var $window = $(window);
+
+    var docViewTop = $window.scrollTop();
+    var docViewBottom = docViewTop + $window.height();
+
+    var elemTop = $elem.offset().top;
+
+    return elemTop <= docViewBottom;
+}
+
+
+
 
 function checkButtons() {
     var scroll_top = $(window).scrollTop();
     if (scroll_top >= contactOffset) {
-        $('#navBar').addClass('fullBar');
-        $('#julian').css('visibility', 'visible');
-        $('#navBar').css('visibility', 'visible');
         $('#contactButton').addClass('selectedButton');
         $('#gridButton').removeClass('selectedButton');
         $('#aboutButton').removeClass('selectedButton');
     } else if (scroll_top >= stuffOffset) {
-        $('#navBar').addClass('fullBar');
-        $('#julian').css('visibility', 'visible');
-        $('#navBar').css('visibility', 'visible');
         $('#gridButton').addClass('selectedButton');
         $('#aboutButton').removeClass('selectedButton');
         $('#contactButton').removeClass('selectedButton');
     } else if (scroll_top >= aboutOffset) { // the detection!
-        $('#navBar').addClass('fullBar');
-        $('#julian').css('visibility', 'visible');
-        $('#navBar').css('visibility', 'visible');
         $('#aboutButton').addClass('selectedButton');
         $('#gridButton').removeClass('selectedButton');
-    } else if (scroll_top >= (aboutOffset - 50)){
-        $('#navBar').removeClass('fullBar');
-        $('#navBar').css('visibility', 'hidden');
-        $('#julian').css('visibility', 'hidden');
-    } else if (scroll_top >= 20){
-        $('#navBar').css('visibility', 'hidden');
-        $('#julian').css('visibility', 'hidden');
-    }else if (scroll_top == (0)){
-        $('#navBar').css('visibility', 'visible');
-        $('#julian').css('visibility', 'hidden');
-        $('#navBar').removeClass('fullBar');
+        $('#contactButton').removeClass('selectedButton');
+    } else if (scroll_top == (0)){
         $('#aboutButton').removeClass('selectedButton');
         $('#gridButton').removeClass('selectedButton');
+        $('#contactButton').removeClass('selectedButton');
     }
 }
 
@@ -104,7 +112,6 @@ function checkButtons() {
         $('html, body').animate({
             scrollTop: placeToGo + 'px'
         });
-        checkButtons();
         return this;
     }
 })(jQuery);

@@ -2,10 +2,10 @@
 @import "helper/placeholders";
 
 $background-color: #1f2833;
-$big-text-color: #66FCF1;
-$small-text-color: #0B0C10;
+$big-text-color: #FF4444;
+$small-text-color: #FF6666;
 $box-color: #C5C6C7;
-$border-color: #45A29E;
+$border-color: #FF7F51;
 
 
 body, html {
@@ -41,47 +41,36 @@ a, a:hover, a:active, a:visited, a:focus {
     height: 2rem;
 }
 
-#navBar {
-    @extend %center;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 3rem;
-    font-weight: 900;
-    opacity: 0.95;
-    z-index: 1;
-    min-width: 50%;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    position: fixed;
-    ul {
-        list-style-type: none;
-        text-decoration: none;
-        float:right;
-        margin-right: 2rem;
-        color: $big-text-color;
-        .button {
-            text-decoration: none;
-            display: inline-block;
-            margin-right: 0.5rem;
-            padding: .25rem 0.5rem;
-            font-size: 1.5rem;
-            line-height: 0.75;
-            cursor: pointer;
-            font-family:'Source Sans Pro', sans-serif;
-        }
 
-        #julian {
-            font-size: 2rem;
-            margin-right: 45rem;
-            visibility: hidden;
+.my-navbar {
+    background-color: $background-color;
+
+    .navbar-brand {
+        color: $big-text-color;
+        font-family:'Source Sans Pro', sans-serif;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+
+    #myNavbar {
+        li a {
+            color: $big-text-color;
+            font-family:'Source Sans Pro', sans-serif;
+            font-size: 1.5rem;
+            cursor: pointer;
+            &:hover, &:focus {
+                background-color: #FFFFFF;
+            }
         }
     }
 }
 
 .selectedButton {
     background-color: $border-color;
-    color: white;
+    color: #FFFFFF !important;
+    &:hover, &:focus {
+        background-color: $border-color !important;
+    }
 }
 
 .fullBar {
@@ -97,6 +86,7 @@ a, a:hover, a:active, a:visited, a:focus {
     text-decoration: none;
     margin-top: 0;
     padding-top:0;
+    margin-bottom: 20%;
     .name{
         @extend %center;
         font-family: 'Source Sans Pro', sans-serif;
@@ -109,17 +99,23 @@ a, a:hover, a:active, a:visited, a:focus {
         padding-top: 0;
         padding-right: 0;
         position: relative;
-        top: 10%;
+        top: 20%;
         left:12%;
     }
-
+    .subTitle {
+        position: relative;
+        top: 20%;
+        font-size: 3.5rem;
+        font-family: 'Source Sans Pro', sans-serif;
+        color: $small-text-color;
+    }
     .sender{
         cursor: pointer;
         height: 10%;
         width: 10%;
         position: absolute;
         border: none;
-        top: 85%;
+        top: 95%;
         right: 48%;
         text-decoration: none;
         transition: height .600s ease;
@@ -147,36 +143,41 @@ a, a:hover, a:active, a:visited, a:focus {
         margin-top: 0;
         padding-top: 0;
         position: relative;
-        color: $border-color;
+        color: $small-text-color;
         font-size: 1.5rem;
         font-family: 'Source Sans Pro', sans-serif;
         line-height: 200%;
-        left: 25%;
-        width: 40%;
+        left: 20%;
+        width: 60%;
         border-radius: 10%;
         padding: 5%;
     }
     .resume {
         @extend %center;
-        width: 14.06rem;
+        width: 15rem;
         height: 4.6875rem;
         border-radius: 5%;
-        border: 0.1rem solid $box-color;
+        border: none;
+        background-color: $background-color;
         padding-right: 0.78125rem;
         padding-bottom: 0.78125rem;
-        position: absolute;
-        left: 42%;
+        position: relative;
+        padding: 1rem 3rem;
+        left: 43%;
         transform: scale(.925);
         transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
         img {
             width: 17.96875rem;
+            position: relative;
+            bottom: 1.75rem;
+            right: 3.5rem;
         }
         h2 {
             position: relative;
             font-size: 2.5rem;
-            top: -7.421875rem;
-            right: -2.73435rem;
-            color: $border-color;
+            top: -7.9rem;
+            right: -2.23435rem;
+            color: #FFFFFF;
             font-family: 'Source Sans Pro', sans-serif;
             text-decoration: none;
         }
@@ -203,6 +204,7 @@ a, a:hover, a:active, a:visited, a:focus {
     @extend %center;
     float: none;
     margin-left: 10%;
+    margin-bottom: 20%;
     display: grid;
     width: 80%;
     height: 50%;
@@ -239,7 +241,7 @@ a, a:hover, a:active, a:visited, a:focus {
         position: fixed;
         width: 40%;
         box-sizing: border-box;
-        background-color: white;
+        background-color: #FFFFFF;
         top: 30%;
         left: 30%;
         border-radius: 10%;
@@ -263,24 +265,26 @@ a, a:hover, a:active, a:visited, a:focus {
         }
     }
 
-    #medHacks {
-        grid-area: education;
-        background-color: white;
-        border-radius: 5%;
-        padding: 5%;
-        @extend %borderhover;
-        cursor: pointer;
-        width: 60%;
-    }
-
-    #legend {
-        grid-area: experience;
+    .section {
         padding: 0;
-        margin: 0;
-        border-radius: 20%;
-        @extend %borderhover;
-        cursor: pointer;
-        width: 90%;
+
+        #medHacks {
+            grid-area: education;
+            background-color: #FFFFFF;
+            border-radius: 5%;
+            padding: 0;
+            cursor: pointer;
+            width: 60%;
+        }
+
+        #legend {
+            grid-area: experience;
+            padding: 0;
+            margin: 0;
+            border-radius: 20%;
+            cursor: pointer;
+            width: 90%;
+        }
     }
 }
 
@@ -323,15 +327,16 @@ a, a:hover, a:active, a:visited, a:focus {
             width: 80%;
             border: 3px none $box-color;
             background-color: $background-color;
-            color: $border-color;
-            border-radius: 3%;
+            color: $small-text-color;
+            border-radius: 13px;
+            margin: 0.3rem;
             padding: 1rem;
         }
     }
 
     button {
         cursor: pointer;
-        color: $border-color;
+        color: #FFFFFF;
         border: none;
         font-size:2.5rem;
         padding: 1rem 3rem;
@@ -351,14 +356,15 @@ a, a:hover, a:active, a:visited, a:focus {
 }
 
 .email-invalid, .name-invalid {
-    color: red;
-    position: relative;
-    top: 36px;
-    font-size: 1rem;
-    left: -299px;
-    background-color: white;
+    color: $border-color;
+    font-size: 2rem;
+    left: 150px;
+    background-color: $background-color;
     padding: 3px;
     padding-top: 0px;
-    opacity: 0;
+    margin-left: 10rem;
+    opacity: 1;
     display: none;
+    width: 40%;
+    border-radius: 13px;
 }

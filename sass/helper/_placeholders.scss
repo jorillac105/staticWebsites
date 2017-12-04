@@ -1,5 +1,5 @@
 $box-color: #C5C6C7;
-$border-color: #45A29E;
+$border-color: #FF7F51;
 
 %center {
   text-align: center;
@@ -12,8 +12,8 @@ $border-color: #45A29E;
 }
 
 %borderhover {
-    border: 0.5rem solid $box-color;
     &:hover {
         border-color: $border-color;
+        background: rgba(0, 0, 0, 0.7);
     }
 }

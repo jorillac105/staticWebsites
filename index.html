@@ -3,31 +3,49 @@
 <head>
     <meta content='width=device-width, initial-scale=1' name='viewport'/>
     <title>Julian Orillac</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
     <link href="./sass/main.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 </head>
 <body>
-    <nav id="navBar">
-        <ul>
-            <li class="button" id="julian">JULIAN ORILLAC</li>
-            <li class="button" id="homeButton">HOME</li>
-            <li class="button" id="aboutButton">ABOUT</li>
-            <li class="button" id="gridButton">PROJECTS</li>
-            <li class="button" id="contactButton">CONTACT ME</li>
-        </ul>
+
+    <nav class="my-navbar navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" id="julian">JULIAN ORILLAC</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a id="homeButton">HOME</a></li>
+                    <li><a id="aboutButton">ABOUT</a></li>
+                    <li><a id="gridButton">PROJECTS</a></li>
+                    <li><a id="contactButton">CONTACT ME</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
     <div class="anchor" id="homeAnchor"></div>
     <div class="title">
-        <h1 class ="name">
+        <h1 class="name">
             JULIAN ORILLAC
         </h1>
+        <h3 class="subTitle">
+            Developer ~ Friend ~ Passionate
+        </h3>
         <img class="sender arrow" src="images/downards-arrow.png"/>
     </div>
     <div class="anchor" id="aboutAnchor"></div>
     <div id="about">
-        <h2 id="aboutMe">ABOUT</h2>
+        <h2 id="aboutMe">ABOUT ME</h2>
         <p class="elevator">
             Hello, I'm Julian. I am a Computer Science major in the Engineering school at Johns Hopkins University. I am incredibly dedicated to bettering my skills and spend the majority of my time either working on small projects or learning new skills. </br>
             I am trilingual (with French and Spanish) and spent the first 12 years of my life abroad in both France and the UAE.
@@ -46,8 +64,12 @@
     <div class="anchor" id="gridAnchor"></div>
     <h2 id="stuff">PROJECTS</h2>
     <div id="grid-container">
-        <img src= "./images/MH-Stickers-03.png" class="section" id="medHacks"/>
-        <img class="section" id="legend" src="./images/you_won.png"/>
+        <div class="section">
+            <img src= "./images/MH-Stickers-03.png" id="medHacks"/>
+        </div>
+        <div class="section">
+            <img id="legend" src="./images/you_won.png"/>
+        </div>
         <div class="overlay"></div>
         <div class="infoWindow" id="medHacksInfo">
             <h2 class="detailTitle">MedHacks</h2>
@@ -75,7 +97,7 @@
             <fieldset class="pure-group">
                 <!-- <label for="email" class="animated">Email: </label> -->
                 <input class="animated" id="email" name="email" type="text" placeholder="Email" required/>
-                <span id="email-invalid" class="animated email-invalid">Must be a valid email address</span>
+                <span id="email-invalid" class="animated email-invalid">Must be a valid email address!</span>
             </fieldset>
 
             <fieldset class="pure-group">
